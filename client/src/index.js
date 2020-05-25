@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import Phaser from "../../node_modules/phaser";
 import Splash from "./scenes/splash";
 import Game from "./scenes/game";
 

@@ -25,9 +25,12 @@ export default class Game extends Phaser.Scene {
         this.dropZone = this.zone.renderZone();
         this.outline = this.zone.renderOutline(this.dropZone);
 
-        // this.socket = io.connect('http://localhost:3000');
-        this.socket = io('https://sueca-card-game.herokuapp.com/');
-
+        if (window.location.href === 'http://localhost:8080/') {
+            console.log(window.location.href)
+            this.socket = io.connect('http://localhost:3000');
+        } else {
+            this.socket = io('https://sueca-card-game.herokuapp.com/');
+        }
 
         this.socket.on('connect', () => {
             console.log('Connected');
