@@ -4,6 +4,7 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
+const PORT = process.env.PORT || 3000;
 let players = [];
 
 app.use(express.static(path.join(__dirname, 'client/dist')));
@@ -42,6 +43,6 @@ io.on('connection', function (socket) {
     });
 });
 
-server.listen(3000, function () {
+server.listen(PORT, function () {
     console.log('Server started!');
 });

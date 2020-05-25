@@ -11,7 +11,9 @@ export default class Splash extends Phaser.Scene {
     }
 
     create() {
-        this.socket = io('http://localhost:3000');
+        // this.socket = io('http://localhost:3000');
+        this.socket = io('https://sueca-card-game.herokuapp.com/');
+
 
         this.socket.on('connect', () => {
             console.log('Connected');
